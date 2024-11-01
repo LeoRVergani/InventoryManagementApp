@@ -61,7 +61,7 @@ const LoginScreen = () => {
                 <View style={styles.logo}>
                     <Image 
                             source={require('../assets/OIG4.png')}
-                            style={{width: 250, height: 250}}
+                            style={{width: 260, height: 260}}
                         />
                 </View>
 
@@ -97,7 +97,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: 'center',
-        backgroundColor: '#FFF'
+        backgroundColor: '#50CC8C'
     },
     input: {
         height: 40,
@@ -111,10 +111,7 @@ const styles = StyleSheet.create({
     logo: {
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#50CC8C',
-        borderBottomRightRadius: 50,
-        borderTopLeftRadius: 50,
-        width: '100%'
+        backgroundColor: '#50CC8C'
     },
     login: {
         backgroundColor: '#FFF',
@@ -122,7 +119,7 @@ const styles = StyleSheet.create({
         marginTop: 20,
         borderTopRightRadius: 50,
         borderTopLeftRadius: 50,
-        paddingBottom: 400
+        paddingBottom: 270
     },
     btnLogin: {
         backgroundColor: '#50CC8C',
@@ -138,7 +135,8 @@ const styles = StyleSheet.create({
     },
     bgGreen: {
         flex: 1,
-        backgroundColor: '#50CC8C'
+        backgroundColor: '#50CC8C',
+        marginTop: 60
     }
 });
 
