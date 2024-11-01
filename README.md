@@ -29,8 +29,8 @@ Este projeto é um **Sistema de Gerenciamento de Movimentação de Produtos** de
 
 1. **Clone o repositório**:
    ```bash
-   git clone <URL_DO_REPOSITORIO>
-   cd <NOME_DO_DIRETORIO>
+   git clone (https://github.com/LeoRVergani/projeto_modulo_1.git)
+   cd projeto_modulo_1
    ```
 
 2. **Instale as dependências**:
