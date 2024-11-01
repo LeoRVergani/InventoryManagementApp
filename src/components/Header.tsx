@@ -1,20 +1,33 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { CommonActions } from "@react-navigation/native";
+import { CommonActions, useNavigation } from "@react-navigation/native";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { AntDesign } from "@expo/vector-icons"
+import { useEffect, useState } from "react";
+
 
 export default function Header() {
 
-    function handleLogout() {
-        AsyncStorage.removeItem(userData)
-        AsyncStorage.removeItem(profile)
+    const [user, setUser] = useState(null);
+    const navigation = useNavigation();
+
+    useEffect(() => {
+        const fetchUser = async () => {
+        const storedUser = await AsyncStorage.getItem('user');
+        if (storedUser) setUser(JSON.parse(storedUser));
+        };
+        fetchUser();
+    }, []);
+
+    /* function handleLogout() {
+        AsyncStorage.removeItem(email)
+        AsyncStorage.removeItem(password)
         navigation.dispatch(
             CommonActions.reset({
                 index: 0,
                 routes: [{ name: 'Login' }],
             })
         )
-    }
+    } */
 
     return (
         
@@ -37,11 +50,16 @@ export default function Header() {
                     flexDirection: 'row',
                     gap: 10,
                     alignItems: 'flex-end'      
-                }}>                
+                }}>
+                    {user && (
+                    
+                                        <Text style={{fontWeight: 'bold'}}>Olá, {user.profile}</Text>
+                        
+                    )}              
                 
-                <Text style={{fontWeight: 'bold'}}>Olá, Admin</Text>
+
                 
-                <TouchableOpacity  onPress={handleLogout} style={styles.btnLogout}>
+                <TouchableOpacity  style={styles.btnLogout}>
                     <Text style={styles.textLogout}>Sair</Text>
                 </TouchableOpacity>
                 </View>

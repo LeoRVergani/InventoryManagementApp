@@ -1,4 +1,3 @@
-// LoginScreen.js
 import React, { useState, useEffect } from 'react';
 import { View, TextInput, Alert, StyleSheet, SafeAreaView, Image, Text, TouchableOpacity } from 'react-native';
 import axios from 'axios';
