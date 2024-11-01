@@ -1,6 +1,6 @@
 // LoginScreen.js
 import React, { useState, useEffect } from 'react';
-import { View, TextInput, Button, Alert, StyleSheet, SafeAreaView, Image, Text, TouchableOpacity } from 'react-native';
+import { View, TextInput, Alert, StyleSheet, SafeAreaView, Image, Text, TouchableOpacity } from 'react-native';
 import axios from 'axios';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useNavigation } from '@react-navigation/native';
@@ -11,7 +11,6 @@ const LoginScreen = () => {
     const navigation = useNavigation();
 
     useEffect(() => {
-        // Verifica se o usuário já está logado ao iniciar a tela
         const checkLoginStatus = async () => {
             const userData = await AsyncStorage.getItem('userData');
             if (userData) {
@@ -38,10 +37,8 @@ const LoginScreen = () => {
 
             if (response) {
                 if (response === "admin")
-                // Armazena nome e perfil do usuário no AsyncStorage
                 await AsyncStorage.setItem('userData', JSON.stringify(response.data.user));
                 
-                // Redireciona para a tela Home
                 navigation.reset({
                     index: 0,
                     routes: [{ name: 'Home' }],
