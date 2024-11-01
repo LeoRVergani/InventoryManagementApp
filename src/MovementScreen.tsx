@@ -26,7 +26,7 @@ export default function MovementScreen() {
 
   const fetchMovements = async () => {
     try {
-      const response = await axios.get<Movement[]>('http://localhost:3000/movements');
+      const response = await axios.get<Movement[]>(process.env.EXPO_PUBLIC_API_URL + '/movements');
       setMovements(response.data);
     } catch (error) {
       Alert.alert('Erro ao buscar movimentações', 'Não foi possível carregar as movimentações.');
@@ -46,7 +46,7 @@ export default function MovementScreen() {
     formData.append('motorista', 'Nome do Motorista');
 
     try {
-      await axios.put(`http://localhost:3000/movements/${movementId}/start`, formData, {
+      await axios.put(process.env.EXPO_PUBLIC_API_URL + `/movements/${movementId}/start`, formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
       Alert.alert('Sucesso', 'Entrega iniciada com sucesso!');
@@ -69,7 +69,7 @@ export default function MovementScreen() {
     formData.append('motorista', 'Nome do Motorista');
 
     try {
-      await axios.put(`http://localhost:3000/movements/${movementId}/end`, formData, {
+      await axios.put(process.env.EXPO_PUBLIC_API_URL + `/movements/${movementId}/end`, formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
       Alert.alert('Sucesso', 'Entrega finalizada com sucesso!');

@@ -12,14 +12,14 @@ interface Movement {
   status: string;
 }
 
-export default function MovementsListScreen() {
+export default function MovementsList() {
   const [movements, setMovements] = useState<Movement[]>([]);
   const navigation = useNavigation();
 
   // Função para buscar as movimentações ao carregar a tela
   const fetchMovements = async () => {
     try {
-      const response = await axios.get<Movement[]>('http://localhost:3000/movements');
+      const response = await axios.get<Movement[]>(process.env.EXPO_PUBLIC_API_URL + '/movements');
       setMovements(response.data);
     } catch (error) {
       console.error('Erro ao buscar movimentações:', error);

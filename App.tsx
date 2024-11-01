@@ -8,7 +8,7 @@ import ProductListScreen from "./src/ProductListScreen";
 import UserRegisterScreen from "./src/UserRegisterScreen";
 import AddMovementScreen from "./src/AddMovementScreen";
 import MovementScreen from "./src/MovementScreen";
-import MovementsListScreen from "./src/MovementsListScreen";
+import MovementsList from "./src/MovementsList";
 
 const Stack = createStackNavigator();
 
@@ -16,7 +16,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <StatusBar backgroundColor="#50CC8C" />
-      <Stack.Navigator initialRouteName="Home">
+      <Stack.Navigator initialRouteName="Login">
         <Stack.Screen
           name="Login"
           component={Login}
@@ -29,7 +29,7 @@ export default function App() {
         />
         <Stack.Screen name="UserList" component={UserList} />
         <Stack.Screen name="ProductList" component={ProductListScreen} />
-        <Stack.Screen name="MovementList" component={MovementsListScreen} />
+        <Stack.Screen name="MovementList" component={MovementsList} />
         <Stack.Screen name="UserRegister" component={UserRegisterScreen} />
         <Stack.Screen name="AddMovement" component={AddMovementScreen} />
         <Stack.Screen name="Movement" component={MovementScreen}/>
