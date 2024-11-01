@@ -1,14 +1,10 @@
 import { SafeAreaView, Text, View, StyleSheet, Image } from "react-native"
 
-export default function Filial() {
+export default function ListUsers() {
     return (
         <SafeAreaView style={styles.container}>
             <View>
-                <Text>Tela de Filial</Text>
-                <Image 
-                    source={require('../assets/caminhaoLogin.jpeg')}
-                    style={{width: 200, height: 200}}
-                />
+                <Text>Tela de lista de usuários</Text>
             </View>
         </SafeAreaView>
 
