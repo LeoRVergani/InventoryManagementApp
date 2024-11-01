@@ -29,7 +29,7 @@ Este projeto é um **Sistema de Gerenciamento de Movimentação de Produtos** de
 
 1. **Clone o repositório**:
    ```bash
-   git clone (https://github.com/LeoRVergani/projeto_modulo_1.git)
+   git clone https://github.com/LeoRVergani/projeto_modulo_1.git
    cd projeto_modulo_1
    ```
 
