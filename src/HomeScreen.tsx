@@ -46,22 +46,6 @@ export default function HomeScreen() {
 
       </View>
 
-      <TouchableOpacity style={styles.btnGeral} onPress={() => navigation.navigate('MovementMoto')}>
-          <Text style={styles.TextBtn}>MovementMoto</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity style={styles.btnGeral} onPress={() => navigation.navigate('Movimentos')}>
-          <Text style={styles.TextBtn}>Movimentos</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity style={styles.btnGeral} onPress={() => navigation.navigate('Cadastro')}>
-          <Text style={styles.TextBtn}>Cadastro</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity style={styles.btnGeral} onPress={() => navigation.navigate('MovementRegisterScreen')}>
-          <Text style={styles.TextBtn}>MovementRegisterScreen</Text>
-        </TouchableOpacity>
-
       <View
         style={{
           flexDirection: "row",
