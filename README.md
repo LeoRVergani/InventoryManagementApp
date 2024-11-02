@@ -1,79 +1,91 @@
 ---
 
-## 📋 Descrição do Projeto
+# 📦 Projeto de Gestão de Estoque e Movimentação de Produtos
 
-Este projeto é um **Sistema de Gerenciamento de Movimentação de Produtos** desenvolvido para uma rede de farmácias, com o objetivo de simplificar e centralizar o controle de produtos entre as filiais da empresa. A aplicação foi construída utilizando **React Native com TypeScript** e **Expo** e oferece uma interface intuitiva para gerenciar estoques, além de permitir um gerenciamento mais eficiente de usuários e movimentações.
+Este projeto consiste em um aplicativo de gerenciamento de estoque e movimentações para uma farmácia. Criado com **React Native** e **TypeScript**, ele oferece uma interface intuitiva para cadastro e consulta de usuários, produtos e movimentações de estoque entre filiais.
 
-## 🚀 Tecnologias Utilizadas
+## 💡 Funcionalidades Principais
 
-- **React Native** com **TypeScript** para desenvolvimento mobile.
-- **Expo** para simplificação do setup e execução.
-- **React Navigation** para gerenciamento de rotas.
-- **Axios** para requisições HTTP à API.
-- **Async Storage** para armazenamento local.
-- **Lottie** para animações e feedback visual.
-- **Expo Image Picker** para integração com a câmera e captura de imagens.
-- **React Native Maps** para visualização do trajeto de movimentações.
+1. **Login de Usuário**:
+   - Tela de login para autenticação do usuário.
+   - Armazenamento seguro de dados de sessão.
 
-## 📝 Funcionalidades
+2. **Tela Home**:
+   - Navegação para gestão de produtos e usuários.
+   - Exibição do perfil e nome do usuário.
 
-1. **Login Seguro**: Autenticação dos usuários com armazenamento seguro dos dados de login.
-2. **Home Personalizada**: Exibição de informações do usuário e navegação para listagem de produtos e gerenciamento de usuários.
-3. **Listagem de Usuários**: Visualização, ativação e desativação de usuários, com feedback visual de status.
-4. **Cadastro de Usuários**: Formulário completo com validação para cadastro de novos usuários.
-5. **Listagem de Produtos**: Apresentação de informações detalhadas dos produtos, incluindo pesquisa e filtragem.
-6. **Cadastro de Movimentações**: Formulário para registro de transferências entre filiais.
-7. **Movimentações para Motorista**: Tela exclusiva para motoristas iniciarem ou finalizarem entregas, com integração de câmera e mapas.
+3. **Gestão de Usuários**:
+   - Listagem de usuários com ativação/desativação de status.
+   - Cadastro de novos usuários com campos de perfil, nome, CPF/CNPJ, endereço, e-mail e senha.
 
-## 🔧 Como Executar o Projeto
+4. **Gestão de Produtos**:
+   - Listagem de produtos com filtro por nome e filial.
+   - Exibição de informações detalhadas de cada produto, como imagem, nome, quantidade e filial.
 
-1. **Clone o repositório**:
+5. **Movimentação de Estoque**:
+   - Cadastro de movimentações com seleção de filial de origem, destino e produto.
+   - Validação de quantidade disponível no estoque.
+   - Listagem de movimentações com origem, destino e status.
+
+## 🛠️ Tecnologias Utilizadas
+
+- **Frontend**: React Native, TypeScript, Lottie para animações, Axios para chamadas de API
+- **Backend**: Node.js, Express
+- **Banco de Dados**: SQLite (com persistência local para dados de teste)
+- **Outras Ferramentas**: Expo, Git, GitHub para versionamento
+
+## 🔧 Instalação e Configuração
+
+1. Clone este repositório:
    ```bash
    git clone https://github.com/LeoRVergani/projeto_modulo_1.git
    cd projeto_modulo_1
    ```
 
-2. **Instale as dependências**:
+2. Instale as dependências do projeto:
    ```bash
    npm install
    ```
 
-3. **Inicie o servidor backend**:
-   - Clone o backend a partir do repositório: [Backend no GitHub](https://github.com/DEVinHouse-Clamed-V3/template_m1)
-   - Instale as dependências:
-     ```bash
-     npm install
-     ```
-   - Execute o servidor:
-     ```bash
-     npm run start
-     ```
-
-4. **Inicie o aplicativo Expo**:
+3. Inicie o backend (API local):
    ```bash
-   npx expo start
+   node backend.js
    ```
 
-## 🎨 Design e Usabilidade
+4. Inicie o Expo para executar o aplicativo mobile:
+   ```bash
+   expo start
+   ```
 
-O layout foi pensado para ser intuitivo, seguindo princípios de usabilidade e acessibilidade. Além disso, as cores contrastantes garantem uma boa visibilidade dos elementos.
+## 📱 Uso do App
 
-## 🔄 Organização do Projeto
-
-O projeto foi gerido com Trello no modelo Kanban, dividindo tarefas nas seguintes etapas:
-- **Backlog**: Planejamento das funcionalidades.
-- **Todo**: Tarefas ainda não iniciadas.
-- **Doing**: Tarefas em andamento.
-- **Blocked**: Tarefas com impedimentos.
-- **Review**: Tarefas concluídas, aguardando revisão.
-- **Done**: Tarefas finalizadas.
+1. **Login**: Use as credenciais predefinidas (exemplo: admin/admin).
+2. **Home**: Selecione a seção de produtos ou usuários.
+3. **Gestão de Usuários**: Consulte e ative/desative usuários, ou cadastre novos usuários.
+4. **Gestão de Produtos**: Visualize produtos e busque por nome/filial.
+5. **Movimentação de Estoque**: Realize cadastro de movimentações e confira a listagem com origem, destino e status.
 
 ---
 
-## 📈 Melhorias Futuras
+## 🚀 Contribuindo
 
-- **Integração com a Play Store**: Disponibilizar a aplicação para Android.
-- **Push Notifications**: Notificações em tempo real para atualizações de movimentações.
-- **Dashboard Analítico**: Informações detalhadas sobre estoque e movimentações.
+1. Faça um fork do projeto.
+2. Crie uma branch com sua feature:
+   ```bash
+   git checkout -b minha-feature
+   ```
+3. Faça commit das suas alterações:
+   ```bash
+   git commit -m "feat: Minha nova feature"
+   ```
+4. Faça o push para a sua branch:
+   ```bash
+   git push origin minha-feature
+   ```
+5. Abra um Pull Request.
+
+## 📄 Licença
+
+Este projeto está sob a licença MIT. 
 
 ---
