@@ -15,11 +15,10 @@ interface Movement {
   product_image: string;
 }
 
-export default function MovementScreen() {
+export default function DriverMovementsList() {
   const [movements, setMovements] = useState<Movement[]>([]);
   const navigation = useNavigation();
 
-  // Carregar as movimentações ao montar o componente
   useEffect(() => {
     fetchMovements();
   }, []);
@@ -137,10 +136,10 @@ const styles = StyleSheet.create({
     marginVertical: 10,
   },
   created: {
-    backgroundColor: '#d3d3d3', // Fundo cinza para status "Created"
+    backgroundColor: '#d3d3d3',
   },
   inTransit: {
-    backgroundColor: '#FFA07A', // Fundo salmão para status "Em Trânsito"
+    backgroundColor: '#FFA07A', 
   },
   productImage: {
     width: 60,

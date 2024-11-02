@@ -23,7 +23,7 @@ export default function UserList() {
   const toggleUserStatus = async (userId: any) => {
     try {
       await axios.patch(process.env.EXPO_PUBLIC_API_URL + `/users/${userId}/toggle-status`);
-      fetchUsers(); // Atualiza a lista de usuários após a alteração do status
+      fetchUsers();
     } catch (error) {
       console.error('Erro ao atualizar status do usuário:', error);
     }

@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { View, Text, TextInput, Button, FlatList, Image, StyleSheet } from 'react-native';
 import axios from 'axios';
 
-// Define o tipo para o produto
 interface Product {
   product_name: string;
   quantity: number;
@@ -23,18 +22,17 @@ export default function ProductListScreen() {
     fetchProducts();
   }, []);
 
-  // Função para buscar produtos no endpoint /products
+
   const fetchProducts = async () => {
     try {
       const response = await axios.get<Product[]>(process.env.EXPO_PUBLIC_API_URL + '/products');
       setProducts(response.data);
-      setFilteredProducts(response.data);  // Inicializa com a lista completa
+      setFilteredProducts(response.data);
     } catch (error) {
       console.error('Erro ao buscar produtos:', error);
     }
   };
 
-  // Função de pesquisa para filtrar produtos
   const handleSearch = () => {
     const filtered = products.filter(product =>
       product.product_name.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -47,7 +45,6 @@ export default function ProductListScreen() {
     <View style={styles.container}>
       <Text style={styles.title}>Listagem de Produtos</Text>
 
-      {/* Campo de Pesquisa */}
       <View style={styles.searchContainer}>
         <TextInput
           style={styles.searchInput}
@@ -58,10 +55,10 @@ export default function ProductListScreen() {
         <Button title="Buscar" onPress={handleSearch} />
       </View>
 
-      {/* Lista de Produtos */}
       <FlatList
         data={filteredProducts}
-        keyExtractor={(item, index) => index.toString()}  // Usando o índice como chave temporária
+        keyExtractor={(item, index) => index.toString()}
+        
         renderItem={({ item }) => (
           <View style={[styles.productCard, item.quantity > 0 ? styles.inStock : styles.outOfStock]}>
             <Image source={{ uri: item.image_url }} style={styles.productImage} />

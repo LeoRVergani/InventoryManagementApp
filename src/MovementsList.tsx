@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, FlatList, Button, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, FlatList, StyleSheet, TouchableOpacity } from 'react-native';
 import axios from 'axios';
 import { useNavigation } from '@react-navigation/native';
 
-// Definindo o tipo Movement
 interface Movement {
   id: number;
   origin_name: string;
@@ -16,7 +15,6 @@ export default function MovementsList() {
   const [movements, setMovements] = useState<Movement[]>([]);
   const navigation = useNavigation();
 
-  // Função para buscar as movimentações ao carregar a tela
   const fetchMovements = async () => {
     try {
       const response = await axios.get<Movement[]>(process.env.EXPO_PUBLIC_API_URL + '/movements');
@@ -26,14 +24,12 @@ export default function MovementsList() {
     }
   };
 
-  // Carrega as movimentações na inicialização
   useEffect(() => {
     fetchMovements();
   }, []);
 
-  // Função para navegar para a tela de adicionar nova movimentação
   const handleAddMovement = () => {
-    navigation.navigate('AddMovement');  // Substitua 'AddMovement' pelo nome da tela de cadastro de movimentação
+    navigation.navigate('MovementRegisterScreen');
   };
 
   return (

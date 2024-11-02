@@ -6,8 +6,8 @@ import { StatusBar } from "react-native";
 import UserList from "./src/UserList";
 import ProductListScreen from "./src/ProductListScreen";
 import UserRegisterScreen from "./src/UserRegisterScreen";
-import AddMovementScreen from "./src/AddMovementScreen";
-import MovementScreen from "./src/MovementScreen";
+import MovementRegisterScreen from "./src/MovementRegisterScreen";
+import DriverMovementsList from "./src/DriverMovementsList";
 import MovementsList from "./src/MovementsList";
 
 const Stack = createStackNavigator();
@@ -27,12 +27,12 @@ export default function App() {
           component={HomeScreen}
           options={{ headerShown: false }}
         />
-        <Stack.Screen name="UserList" component={UserList} />
-        <Stack.Screen name="ProductList" component={ProductListScreen} />
-        <Stack.Screen name="MovementList" component={MovementsList} />
-        <Stack.Screen name="UserRegister" component={UserRegisterScreen} />
-        <Stack.Screen name="AddMovement" component={AddMovementScreen} />
-        <Stack.Screen name="Movement" component={MovementScreen}/>
+        <Stack.Screen name="UserList" component={UserList} options={{ headerShown: false }}/>
+        <Stack.Screen name="ProductList" component={ProductListScreen} options={{ headerShown: false }}/>
+        <Stack.Screen name="MovementsList" component={MovementsList} options={{ headerShown: false }}/>
+        <Stack.Screen name="UserRegister" component={UserRegisterScreen} options={{ headerShown: false }}/>
+        <Stack.Screen name="DriverMovementsList"component={DriverMovementsList} options={{ headerShown: false }}/>
+        <Stack.Screen name="MovementRegisterScreen" component={MovementRegisterScreen} options={{ headerShown: false }}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
