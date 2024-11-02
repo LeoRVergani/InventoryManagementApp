@@ -33,7 +33,7 @@ export default function UserRegisterScreen({ navigation }) {
       });
       
       Alert.alert('Sucesso', 'Usuário cadastrado com sucesso!');
-      navigation.navigate('UserList'); // Navega para a lista de usuários após o cadastro
+      navigation.navigate('UserList'); 
     } catch (error) {
       console.error('Erro ao registrar usuário:', error);
       Alert.alert('Erro', 'Não foi possível realizar o cadastro. Tente novamente.');
