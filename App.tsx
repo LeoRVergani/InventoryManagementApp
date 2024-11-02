@@ -10,9 +10,9 @@ export default function App() {
   return (
     <NavigationContainer>
       <StatusBar backgroundColor="#50CC8C"/>
-      <Stack.Navigator initialRouteName='Login'>
+      <Stack.Navigator initialRouteName='Home'>
         <Stack.Screen name='Login' component={Login} options={{header: () => <></>}}/>
-        <Stack.Screen name='Home' component={Home} />
+        <Stack.Screen name='Home' component={Home} options={{header: () => <></>}}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
