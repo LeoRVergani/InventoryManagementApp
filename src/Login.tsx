@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { View, TextInput, Alert, StyleSheet, SafeAreaView, Image, Text, TouchableOpacity } from 'react-native';
 import axios from 'axios';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -110,7 +110,7 @@ const styles = StyleSheet.create({
         marginTop: 20,
         borderTopRightRadius: 50,
         borderTopLeftRadius: 50,
-        paddingBottom: 270,
+        paddingBottom: 450,
     },
     btnLogin: {
         backgroundColor: '#50CC8C',
